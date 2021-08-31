@@ -1,0 +1,85 @@
+Codeigniter 
+
+-> application/config/config.php
+
+//for localhost
+$config['base_url'] = 'http://localhost';
+
+// for awardspace 
+$config['base_url'] = 'http://libraryonline.atwebpages.com/';
+
+
+################################################################
+-> application/config/database.php
+
+/* Localhost */
+$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => '3262038_boss',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => FALSE,
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+
+/* Awardspace */
+/*$db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'fdb24.awardspace.net',
+	'username' => '3262038_boss',
+	'password' => 'bossishere1',
+	'database' => '3262038_boss',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => TRUE,
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+*/
+
+###########################################################
+
+-> project_folder/.htaccess
+
+
+for localhost
+	<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php/$1 [L]
+	</IfModule>
+
+
+for awardspace
+  #RewriteEngine On
+  #RewriteBase /
+  #RewriteRule ^index\.php$ - [L]
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteRule . /index.php [L]
+  
+############################################################
